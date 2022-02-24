@@ -7,7 +7,7 @@ function AddTask(props) {
         if(tasks.trim() === ''){
             return 
         } else {
-            axios.post('http://localhost:9000/task' , {
+            axios.post('https://my-todo-app-node.herokuapp.com/task' , {
                 task : tasks,
                 isComplete : false
             }).then(res => {

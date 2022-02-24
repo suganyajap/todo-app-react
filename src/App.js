@@ -9,7 +9,7 @@ function App() {
   const [tasktoUpdate , setTasktoUpdate] = useState({})
   const [showPopup,setShowPopup] = useState(false)
   useEffect(() => {
-    axios.get('http://localhost:9000/task').then(res => {
+    axios.get('https://my-todo-app-node.herokuapp.com/task').then(res => {
       setTodolist(res.data)
     }).catch(err => console.log(err))
   },[])

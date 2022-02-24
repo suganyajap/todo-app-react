@@ -4,12 +4,12 @@ import axios from 'axios'
 function UpdateTask(props) {
     const [task,setTask] = useState(props.task.todo)
     const updateTask = () => {
-        if(task.trim() === '' || props.task.todo === task){
+        if(task.trim() === '' || props.task.task === task){
             props.removePopup()
         } else {
             axios.put(`http://localhost:9000/task/${props.task._id}`,{
                 _id : props.task._id,
-                todo : task,
+                task : task,
                 isComplete : props.task.isComplete
             }).then(res => {
                 props.removePopup()
